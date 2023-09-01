@@ -14,14 +14,8 @@ function btnbuscar(){
     let resposta =document.getElementById('content')
 
     let imagem=document.getElementById('imgPokemon')
-
     
-
-    let html =''
-
-   
-
-    
+    let html =''   
 
     fetch(urlform)
     .then(resposta => resposta.json())    
