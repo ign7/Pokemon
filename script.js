@@ -52,7 +52,7 @@ function gethistorico(){
         <img src="${consulta.sprites.front_default}" alt="${consulta.name}">
         <img src="${consulta.sprites.back_default}" alt="${consulta.name}">`
 
-        divConsulta.style.padding = '10px';       
+         
         divConsulta.innerHTML = exibirhtml;
 
        
