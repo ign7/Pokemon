@@ -31,28 +31,28 @@ function btnbuscar(){
             dataType:'json'
         }).done(function(data){
             if(data==1){
+                const divConsulta = document.createElement('div');
+                divConsulta.innerHTML = '';    
+                const containerHistorico = document.querySelector('.containerhistorico');
                 $.ajax({
                     url:'getpokemon.php',
                     method:'GET',
                     dataType:'json'
                 }).done(function(res){
-                    const containerHistorico = document.querySelector('.containerhistorico');
+                                        
                     for(var i=0;i<res.length;i++){
                         console.log(res[i].type);
                         console.log(res[i].back_default);
                         console.log(res[i].front_default);
-                        
-                        const divConsulta = document.createElement('div');
+                                           
                     const exibirhtml=`<div style=background-color:#ffcc01;><p>Name: ${res[i].name}</p>
                     <p>Type: ${res[i].type}</p></div>
                     <img src="${res[i].front_default}" alt="${res[i].name}">
                     <img src="${res[i].back_default}" alt="${res[i].name}">`
-            
-                     
-                    divConsulta.innerHTML = exibirhtml;
-            
-                   
+                           
+                    divConsulta.innerHTML = exibirhtml;                  
                     containerHistorico.appendChild(divConsulta);
+                   
                     }       
                 })
             }
