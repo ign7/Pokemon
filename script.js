@@ -31,9 +31,10 @@ function btnbuscar(){
             dataType:'json'
         }).done(function(data){
             if(data==1){
-                const divConsulta = document.createElement('div');
-                divConsulta.innerHTML = '';    
+                
+                
                 const containerHistorico = document.querySelector('.containerhistorico');
+                containerHistorico.innerHTML = '';
                 $.ajax({
                     url:'getpokemon.php',
                     method:'GET',
@@ -49,7 +50,7 @@ function btnbuscar(){
                     <p>Type: ${res[i].type}</p></div>
                     <img src="${res[i].front_default}" alt="${res[i].name}">
                     <img src="${res[i].back_default}" alt="${res[i].name}">`
-                           
+                    const divConsulta = document.createElement('div');      
                     divConsulta.innerHTML = exibirhtml;                  
                     containerHistorico.appendChild(divConsulta);
                    
