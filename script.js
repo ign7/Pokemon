@@ -27,7 +27,7 @@ function btnbuscar(){
         resposta.innerHTML=html
         imagem.innerHTML="<img src=' "+result.sprites.front_default+"'><img src=' "+result.sprites.back_default+"'>"
         $.ajax({
-            url:'controller.php',
+            url:'controller.php?opcao=savepokemon',
             method:'POST',
             data:{name:result.name,type:result.types[0].type.name,front_default:result.sprites.front_default,back_default:result.sprites.back_default},
             dataType:'json'
@@ -38,7 +38,7 @@ function btnbuscar(){
                 const containerHistorico = document.querySelector('.containerhistorico');
                 containerHistorico.innerHTML = '';
                 $.ajax({
-                    url:'getpokemon.php',
+                    url:'controller.php?opcao=getpokemon',
                     method:'GET',
                     dataType:'json'
                 }).done(function(res){
