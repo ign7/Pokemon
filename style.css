@@ -67,7 +67,8 @@ hr{
     font-weight: 900;
     color: #1b356e;
 }
-.group-form input{
+
+.group-form input[type=submit]{
     width: 100%;
     padding: 10px;
     border:  1px solid #ccc;
@@ -75,8 +76,6 @@ hr{
     text-transform: uppercase;
     border-radius: 5px;
     margin: 5px 0;    
-}
-.group-form input[type=submit]{
     background: #1b356e;
     font-weight: 900;
     color: white;
